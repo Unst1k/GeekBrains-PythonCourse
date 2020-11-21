@@ -1,6 +1,14 @@
-from DZ4.DZ46.generators import numbers_generator, row_generator
+from itertools import count, cycle
+
 
 # Генерация целых чисел, начиная с указанного пользователем
+def numbers_generator(user_number, the_last_number):
+    for i in count(user_number):
+        if i > the_last_number:
+            break
+        else:
+            print(i)
+
 
 while True:
     try:
@@ -18,6 +26,16 @@ while True:
         print('Введено некорректное значение!')
 
 # Повтор элементов списка, указанного пользователем
+
+
+def row_generator(user_row, repeat):
+    row_count = 0
+    for i in cycle(user_row):
+        if row_count > (repeat*len(user_row)-1):
+            break
+        print(i)
+        row_count += 1
+
 
 while True:
     try:
